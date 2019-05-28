@@ -1,0 +1,19 @@
+<form [formGroup]="hotelForm" (ngSubmit)="onFormSubmit(hotelForm.value)">
+    <p-panel header="Modificar hotel">
+        <input-molecule [parentForm]="hotelForm" id="name" label="Nombre"></input-molecule>
+        <input-molecule [parentForm]="hotelForm" id="address" label="Dirección"></input-molecule>
+        <input-molecule [parentForm]="hotelForm" id="description" label="Descripción"></input-molecule>
+
+        <div class="form-group">
+                <label for="stars">Estrellas</label>
+                <p-rating name="stars"
+                            formControlName="stars"
+                            [cancel]="false">
+                </p-rating>
+            </div>
+        <p-footer>
+            <button pButton type="button" (click)="cancel()"  icon="pi pi-save" label="Cancelar" class="ui-button-info" style="margin-right: .25em"></button>
+            <button pButton type="submit" [disabled]="!hotelForm.valid" type="submit" icon="pi pi-times-circle" label="Modificar" class="ui-button-info"></button>
+        </p-footer>
+    </p-panel>
+</form>

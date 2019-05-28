@@ -1,0 +1,10 @@
+<form [formGroup]="hotelForm" (ngSubmit)="onFormSubmit(hotelForm.value)">
+    <p-panel header="Nuevo hotel">
+        <input-molecule [parentForm]="hotelForm" id="name" label="Nombre"></input-molecule>
+        <input-molecule [parentForm]="hotelForm" id="address" label="Dirección"></input-molecule>
+        <input-molecule [parentForm]="hotelForm" id="description" label="Descripción"></input-molecule>
+        <p-footer>
+            <button pButton [disabled]="!hotelForm.valid" type="submit" icon="pi pi-plus" label="Guardar" class="ui-button-info"></button>
+        </p-footer>
+    </p-panel>
+</form>

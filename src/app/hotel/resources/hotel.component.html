@@ -1,0 +1,29 @@
+
+<p-table [value]="data" selectionMode="single" [(selection)]="selectedHotel" (onRowSelect)="onRowSelect($event)">
+  <ng-template pTemplate="caption">
+      <div class="ui-helper-clearfix">
+          <a type="button" pButton icon="pi pi-file" iconPos="left" label="Nuevo" [routerLink]="['add']"  style="float:left"></a>
+      </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Nombre</th>
+          <th>Dirección</th>
+          <th>Descripción</th>
+          <th>Estrellas</th>
+          <th style="width:4em"></th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-row>
+      <tr [pSelectableRow]="row">
+          <td>{{row.name}}</td>
+          <td>{{row.address}}</td>
+          <td>{{row.description}}</td>
+          <td>{{row.stars}}</td>
+          <td>
+            <button pButton type="button" icon="pi pi-trash" class="ui-button-info" (click)="deleteHotel(row.id)"></button>
+          </td>
+      </tr>
+  </ng-template>
+</p-table>
+    

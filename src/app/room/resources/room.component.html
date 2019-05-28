@@ -1,0 +1,22 @@
+
+<p-table [value]="data">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Hotel</th>
+            <th>Número</th>
+            <th>Disponible</th>
+            <th>Limpiada</th>
+            <th>Cama matrimonio</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-row>
+        <tr>
+            <td>{{row.hotel.name}}</td>
+            <td>{{row.number}}</td>
+            <td>{{row.checkin | booleanTranslate}}</td>
+            <td>{{row.cleaning | booleanTranslate}}</td>
+            <td>{{row.doubleBed | booleanTranslate}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+          
